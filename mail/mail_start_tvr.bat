@@ -1,0 +1,3 @@
+echo start mail_start_tvr pro ...
+python mail_start_tvr.py
+pause
