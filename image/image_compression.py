@@ -44,16 +44,16 @@ def is_image(srcFile):
 # 压缩图片并保存
 def compression(srcFile,distFile):
     try:
-        # 打开原图片缩小后保存，可以用if srcFile.endswith(".jpg")或者split，splitext等函数等针对特定文件压缩
-        sImg = Image.open(srcFile)
-        w, h = sImg.size
-        # 设置压缩尺寸和选项
-        dImg = sImg.resize((int(w * size_ratio), int(h * size_ratio)), Image.ANTIALIAS)
-        # 也可以用srcFile原路径保存,或者更改后缀保存，save这个函数后面可以加压缩编码选项JPEG之类的
-        dImg.save(distFile, quality=quality)
+        # 读取原图
+        srcImg = Image.open(srcFile)
+        w, h = srcImg.size
+        # 重新设置图片尺寸和选项，Image.ANTIALIAS：平滑抗锯齿
+        distImg = srcImg.resize((int(w * size_ratio), int(h * size_ratio)), Image.ANTIALIAS)
+        # 保存为新图
+        distImg.save(distFile, quality=quality)
         print (distFile + " 压缩成功！")
-    except Exception:
-        print (distFile + " 压缩失败！")
+    except Exception as e:
+        print (distFile + " 压缩失败！异常信息：", e)
 
 if __name__ == '__main__':
     print ("=================开始执行=================")
