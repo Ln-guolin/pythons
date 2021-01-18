@@ -11,7 +11,7 @@ sys.setdefaultencoding( "utf-8")
 # sudo pip install selenium
 # 下载驱动 https://sites.google.com/a/chromium.org/chromedriver/
 # google浏览器驱动文件chromedriver地址
-hromedriver_exe_path = '/Users/apple/Documents/do/py/driver/chromedriver'
+hromedriver_exe_path = '/Users/mac/Documents/work_env/chromedriver'
 
 login_url = 'http://ptr.coostore.cn/#/auth'
 login_name = 'admin'
